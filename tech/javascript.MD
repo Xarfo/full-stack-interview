@@ -20,7 +20,7 @@ In the **global execution context (outside of any function)**, `this` refers to 
 
 **Inside a function**, the value of this depends on how the function is called.
     
-*Implicity Binding*: As an `object method` its `this` is set to the object the method is called on.
+*Implicity Binding*: As an object method its `this` is set to the object the method is called on.
    
 *Explicit Binding*: Functions have three methods on their prototype, bind, call, and apply. If a function is called with these methods, then `this` is set to the first argument passed.
    
