@@ -20,19 +20,20 @@ In the **global execution context (outside of any function)**, `this` refers to 
 
 **Inside a function**, the value of this depends on how the function is called.
     
-   *Implicity Binding*: As an `object method` its `this` is set to the object the method is called on.
+*Implicity Binding*: As an `object method` its `this` is set to the object the method is called on.
    
-   *Explicit Binding": Functions have three methods on their prototype, bind, call, and apply. If a function is called with these methods, then `this` is set to the first argument passed.
-    
-    As an example:
-    ```
-    function echoThis() {
-        console.log(this);
-    }
-    echoThis.call('hello') // hello
-    ```
-    *new Binding*: If a function is called using the `new` keyword, an empty object is created and assigned to `this` inside the function.
-    *default Binding*: If a function is called, but the three scenarios above do not apply, then `this` is set to the global object if not in strict mode, and `undefined` if in strict mode.
+*Explicit Binding*: Functions have three methods on their prototype, bind, call, and apply. If a function is called with these methods, then `this` is set to the first argument passed.
+   
+As an example:
+```
+function echoThis() {
+  console.log(this);
+  }
+echoThis.call('hello') // hello
+```
+*new Binding*: If a function is called using the `new` keyword, an empty object is created and assigned to `this` inside the function.
+
+*default Binding*: If a function is called, but the three scenarios above do not apply, then `this` is set to the global object if not in strict mode, and `undefined` if in strict mode.
 
 *Arrow function exception*: If a function is defined as an arrow function, the prior rules will not apply. Instead, `this` will refer to the `this` binding in the immediate scope where the arrow function was declared.
 
