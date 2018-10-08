@@ -19,9 +19,18 @@ A function's `this` keyword behaves a little differently in JavaScript compared 
 In the **global execution context (outside of any function)**, `this` refers to the global object whether in `strict mode` or not.
 
 **Inside a function**, the value of this depends on how the function is called.
-    Explain _arrow functions_ this, `bind` method
-
+    Functions have three methods on their prototype, bind, call, and apply. If a function is called with these methods, then `this` is set to the first argument passed.
+    
+    As an example:
+    ```
+    function echoThis() {
+        console.log(this);
+    }
+    echoThis.call('hello') // hello
+    ```
 As an `object method` its `this` is set to the object the method is called on.
+
+If a function is defined as an arrow function, the prior rules will not apply. Instead, `this` will refer to the `this` binding in the immediate scope where the arrow function was declared.
 
 ###### References
 * [MDN web docs / this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
